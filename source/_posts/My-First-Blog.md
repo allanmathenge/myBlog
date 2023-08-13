@@ -7,4 +7,4 @@ tags:
 Welcome to my First blog page
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-<hyvor-talk-comments website-id="9340" page-id=""></hyvor-talk-comments>
+<hyvor-talk-comments website-id="9342" page-id=""></hyvor-talk-comments>
