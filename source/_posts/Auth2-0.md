@@ -77,39 +77,31 @@ Refresh token must not be allowed to issue access token as that will grant indef
 
 The user (client) uses the Access Token until it expires. It is verified with a middleware and new access token is issued at refresh request.
 
-<code>
-    const refresh = (req, res) => {
-        const cookies = req.cookies
+const refresh = (req, res) => {
+    const cookies = req.cookies
+    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized!'})
+    const refreshToken = cookies.jwt
 
-        if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized!'})
-
-        const refreshToken = cookies.jwt
-
-        jwt.verify(
-            refreshToken,
-            process.env.REFRESH_TOKEN_SECRET,
-            async (error, decoded) => {
-
-                if (error) return res.status(403).json({ message: 'Forbidden'})
-
-                const user = await User.findOne({ username: decoded.username}) // find the user with the provided credentials
-
-                if (!user) return res.status(401).json({ message: 'Unauthorized!'})
-
-                const accessToken = jwt.sign(
-                    {
-                        "UserInfo": {
-                            "username": user.username,
-                        }
-                    },
-                    process.env.ACCESS_TOKEN_SECRET,
-                    { expiresIn: '10s'}
-                )
-                res.json({ accessToken })
-            }
-        )
-    }
-</code>
+    jwt.verify(
+        refreshToken,
+        process.env.REFRESH_TOKEN_SECRET,
+        async (error, decoded) => {
+            if (error) return res.status(403).json({ message: 'Forbidden'})
+            const user = await User.findOne({ username: decoded.username}) // find the user with the provided credentials
+            if (!user) return res.status(401).json({ message: 'Unauthorized!'})
+            const accessToken = jwt.sign(
+                {
+                    "UserInfo": {
+                        "username": user.username,
+                    }
+                },
+                process.env.ACCESS_TOKEN_SECRET,
+                { expiresIn: '10s'}
+            )
+            res.json({ accessToken })
+        }
+    )
+}
 
 If the access token is valid new Access Token is issued to the users application. 
 
