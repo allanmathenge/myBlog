@@ -118,3 +118,7 @@ Note: When the Access Token expires, the user application will not need to send 
 ## Conclusion
 
 The user authentication and authorization above is effectively handled by JWT. Caution has to be taken to prevent an unauthorized parties from accessing the resources in our application. Only authorized users (depending on their assigned roles) are allowed. Refresh token is used to issue new Access Token using a middleware because it is shortlived and has to be reissued after expiry. Every time the Access Token is issued, the expired Access token and Refresh Token have to be verified, if error occurs(in case its tampered with) the user is unauthorized. Refresh and Access token discussed above must be set correctly, in terms of expiry or on how they are allowed to issue resources access. 
+
+
+<script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+<hyvor-talk-comments website-id="9346" page-id=""></hyvor-talk-comments>
