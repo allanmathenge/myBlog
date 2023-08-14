@@ -6,7 +6,7 @@ tags:
 
 ## Introduction
 
-Auth is the first line of security to all protected routes of a website. The protcted routes have resources that only authorized users are allowed to access. Auth uses two main security features to authenticate and authorize users namely, refresh and access token. Users are welcome in the website's public page. The credentials users provided as username and password are used to authenticate, or make an identification of who they are. In this article we will explore the process user authorization using the above named security fetures.
+Auth is the first line of security to all protected routes of a website. The protcted routes have resources that only authorized users are allowed to access. Auth uses two main security features to authenticate and authorize users namely, refresh and access token. Users are welcome in the website's public page. The credentials users provided as username and password are used to authenticate, or make an identification of who they are. In this article we will explore the process user authorization using the above named security features.
 
 
 ### JSON web token
