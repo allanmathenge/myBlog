@@ -6,12 +6,12 @@ tags:
 
 ## Introduction
 
-Auth is the first line of security to all protected routes of a website. The protcted routes have resources that only authorized users are allowed to access. Auth uses two main security features to authenticate and authorize users namely, refresh and access token. Users are welcome in the website's public page. The credentials users provided as username and password are used to authenticate, or make and identification of who they are. In this article we will explore the process user authorization using the above named security fetures.
+Auth is the first line of security to all protected routes of a website. The protcted routes have resources that only authorized users are allowed to access. Auth uses two main security features to authenticate and authorize users namely, refresh and access token. Users are welcome in the website's public page. The credentials users provided as username and password are used to authenticate, or make an identification of who they are. In this article we will explore the process user authorization using the above named security fetures.
 
 
 ### JSON web token
 
-TWT - JSON web token is a reference form of user identification. The token is issued by the app user after the initial user login to confirm authentication. Before running the following commands on terminal make sure you have Node.js installed and an IDE of your choice. I am using Visual Studio code.
+JWT - JSON Web Token is a reference form of user identification. The token is issued by the user application after the initial user login to confirm authentication. Before running the following commands on terminal make sure you have Node.js installed and an IDE of your choice. I am using Visual Studio code.
 
 ``` bash
     $ npm install jsonwebtoken
@@ -28,7 +28,7 @@ Press enter and we get a secret key. The token looks like this:
     d0ab0916deb78735acc1c839f082e8e4f04414f410e2d450138bd76d65608a16f09c2c1fb595ad06438c2c37b7773877c4724897ebe9d203e181c477b55ee75d
     ```
 
-Copy and paste it as your ACCESS_TOKEN_SECRET on your .env file. Press an up arrow(^) + enter and get another token and name it REFRESH_TOKEN_SECRET
+Copy and paste it as your ACCESS_TOKEN_SECRET on your .env file. Press an up arrow(^) + enter and get another token and name it REFRESH_TOKEN_SECRET.
 
 
 ## Refresh and Access Tokens
@@ -37,7 +37,7 @@ After login and complete authentification of the user, rest API will issue an ac
 
 ### Access Token
 
-The received access token is given a short time before it expires, for example 5 to 15 minutes. Rest api send and receive access token in form of JSON.
+The received access token is given a short time before it expires, for example 5 to 15 minutes. The Rest api send and receive access token in form of JSON.
 
     const accessToken = jwt.sign(
         {
@@ -57,23 +57,24 @@ Access token is stored in application's state or memory. It should NOT be stored
 
 Refresh token is issued after authentification and takes a longer time duration of several hours or day(s) before it expires. In my code below it will take a week before expiring. 
 
-    // Create secure cookie with refresh token. 'jwt' is its key name to be used below in refresh token below.
+    // Create secure cookie with refresh token. 'jwt' is its key name to be used below in refresh token.
 
     res.cookie('jwt', refreshToken, {
         httpOnly: true, // accessible only by web server
         secure: true, // https
-        sameSite: 'None', // cross-site cookie
+        sameSite: 'None', // cross-site cookie allowed. Can be accessed in other websites.
         maxAge: 7 * 24 * 60 * 60 * 1000 // cookie expiry set to match refreshToken (1 week)
     })
 
-    // Send accessToken containing username and roles
+    // Send accessToken containing username.
+
     res.json({ accessToken })
 
 It is sent as httpOnly cookie. httpOnly cookie is not accessible via JavaScript and must be allowed to expire.
 
 Refresh token must not be allowed to issue access token as that will grant indefinite access.
 
-### Refresh Token with middleware
+### Verify Refresh Token with middleware
 
 The user (client) uses the Access Token until it expires. It is verified with a middleware and new access token is issued at refresh request.
 
@@ -117,7 +118,7 @@ Note: When the Access Token expires, the user application will not need to send 
 
 ## Conclusion
 
-The user authentication and authorization above is effectively handled by JWT. Caution has to be taken to prevent an unauthorized parties from accessing the resources in our application. Only authorized users (depending on their assigned roles) are allowed. Refresh token is used to issue new Access Token using a middleware because it is shortlived and has to be reissued after expiry. Every time the Access Token is issued, the expired Access token and Refresh Token have to be verified, if error occurs(in case its tampered with) the user is unauthorized. Refresh and Access token discussed above must be set correctly, in terms of expiry or on how they are allowed to issue resources access. 
+The user authentication and authorization above is effectively handled by JWT. Only authorized users (depending on their assigned roles) are allowed. Refresh token is used to issue new Access Token using a middleware because it is shortlived and has to be reissued after expiry. Every time the Access Token is issued, the expired Access token and Refresh Token have to be verified, if error occurs(in case its tampered with) the user is unauthorized. Caution has to be taken to prevent an unauthorized parties from accessing the resources in our application. Refresh and Access token discussed above must be set correctly, in terms of expiry or on how they are allowed to issue resources access. 
 
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
