@@ -73,39 +73,43 @@ It is sent as httpOnly cookie. httpOnly cookie is not accessible via JavaScript 
 
 Refresh token must not be allowed to issue access token as that will grant indefinite access.
 
+### Refresh Token with middleware
+
 The user (client) uses the Access Token until it expires. It is verified with a middleware and new access token is issued at refresh request.
 
-const refresh = (req, res) => {
-    const cookies = req.cookies
+<code>
+    const refresh = (req, res) => {
+        const cookies = req.cookies
 
-    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized!'})
+        if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized!'})
 
-    const refreshToken = cookies.jwt
+        const refreshToken = cookies.jwt
 
-    jwt.verify(
-        refreshToken,
-        process.env.REFRESH_TOKEN_SECRET,
-        async (error, decoded) => {
+        jwt.verify(
+            refreshToken,
+            process.env.REFRESH_TOKEN_SECRET,
+            async (error, decoded) => {
 
-            if (error) return res.status(403).json({ message: 'Forbidden'})
+                if (error) return res.status(403).json({ message: 'Forbidden'})
 
-            const user = await User.findOne({ username: decoded.username}) // find the user with the provided credentials
+                const user = await User.findOne({ username: decoded.username}) // find the user with the provided credentials
 
-            if (!user) return res.status(401).json({ message: 'Unauthorized!'})
+                if (!user) return res.status(401).json({ message: 'Unauthorized!'})
 
-            const accessToken = jwt.sign(
-                {
-                    "UserInfo": {
-                        "username": user.username,
-                    }
-                },
-                process.env.ACCESS_TOKEN_SECRET,
-                { expiresIn: '10s'}
-            )
-            res.json({ accessToken })
-        }
-    )
-}
+                const accessToken = jwt.sign(
+                    {
+                        "UserInfo": {
+                            "username": user.username,
+                        }
+                    },
+                    process.env.ACCESS_TOKEN_SECRET,
+                    { expiresIn: '10s'}
+                )
+                res.json({ accessToken })
+            }
+        )
+    }
+</code>
 
 If the access token is valid new Access Token is issued to the users application. 
 
@@ -113,4 +117,4 @@ Note: When the Access Token expires, the user application will not need to send 
 
 ## Conclusion
 
-The user authentication and authorization above is effectively handled by JWT. Caution has to be taken to prevent an unauthorized parties from accessing the resources in our application. Only authorized users (depending on their assigned roles) are allowed. Refresh and Access token discussed above must be set correctly, in terms of expiry or on how they are allowed to issue resource access. 
+The user authentication and authorization above is effectively handled by JWT. Caution has to be taken to prevent an unauthorized parties from accessing the resources in our application. Only authorized users (depending on their assigned roles) are allowed. Refresh token is used to issue new Access Token using a middleware because it is shortlived and has to be reissued after expiry. Every time the Access Token is issued, the expired Access token and Refresh Token have to be verified, if error occurs(in case its tampered with) the user is unauthorized. Refresh and Access token discussed above must be set correctly, in terms of expiry or on how they are allowed to issue resources access. 
