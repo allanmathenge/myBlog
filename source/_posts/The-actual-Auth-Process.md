@@ -80,3 +80,5 @@ on the Headers on postman *{see Postman set up}* key: Authorization  value: Bear
 
 The process of authentication discussed depends heavily on the authenticity of the tokens received by the endpoints. If the Token is authentic the user is granted access to the protected routes. Otherwise, the user is blocked from having acccess to the protected routes. JWT middleware ensures that happens without failure. In case one of the tokens are missing, expired or tampred with, the user will be blocked from accessing the protected routes. When the auth process is successful, the user is granted access to the routes of the protected resources or data. We can automate this process which eliminates the need for users to authenticate themselves when the access Token expires.
 
+<script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+<hyvor-talk-comments website-id="9352" page-id=""></hyvor-talk-comments>
