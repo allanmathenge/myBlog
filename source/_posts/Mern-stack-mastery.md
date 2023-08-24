@@ -74,8 +74,7 @@ Express can ***serve static files*** like HTML, CSS, images etc using `express.s
 
 Express js simplifies the process of ***error handling*** using middlewares that catch and process errors during the request and response cycle.
 
-To organize your code into manageable units, express encourages the use of ***routing and controllers***. Routes can be modularized into different files in arespect to their route handlers and logic.
-
+To organize your code into manageable units, express encourages the use of ***routing and controllers***. Routes can be modularized into different files in respect to their route handlers and logic.
 
 
 ### ***React***
