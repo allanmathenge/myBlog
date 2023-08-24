@@ -17,7 +17,7 @@ JWT middleware verify the valid token, everytime we make a request to a protecte
 
 Auth header provides data origin authentication. The header of the request may have authorization or Authorization header ( 'a' or 'A'). There is no requirement or standard way hence we include both in the middleware.
 
-What is required is a starndard way of providing auth header. We will verify the value of the auth header if it starts with "Bearer ". If it does not, we throw an unauthorized response. We call the split(' ')[1] method to access the value of the token that follows the bearer keyword.
+What is required is a starndard way of providing auth header. We verify the value of the auth header if it starts with "Bearer ". If it does not, we throw an unauthorized response. We call the split(' ')[1] method to access the value of the token that follows the bearer keyword.
 
     const authHeader = req.headers.authorization || req.headers.Authorization
         if (!authHeader?.startsWith('Bearer ')) {
@@ -81,4 +81,4 @@ on the Headers on postman *{see Postman set up}* key: Authorization  value: Bear
 The process of authentication discussed depends heavily on the authenticity of the tokens received by the endpoints. If the Token is authentic the user is granted access to the protected routes. Otherwise, the user is blocked from having acccess to the protected routes. JWT middleware ensures that happens without failure. In case one of the tokens are missing, expired or tampred with, the user will be blocked from accessing the protected routes. When the auth process is successful, the user is granted access to the routes of the protected resources or data. We can automate this process which eliminates the need for users to authenticate themselves when the access Token expires.
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-<hyvor-talk-comments website-id="9352" page-id=""></hyvor-talk-comments>
+<hyvor-talk-comments website-id="9352" page-id=""></hyvor-talk-comments>    
