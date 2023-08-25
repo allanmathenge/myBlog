@@ -157,5 +157,18 @@ That brings us to the Node.js ***event driven architecture*** that is allows exe
 
 `getAllUsers` function above is ***single-threaded*** but uses an underlying asynchronous thread pool to handle I/O operations, enabling concurrency.
 
-Reusable components are organized into ***modules*** depending on their functionality. These files can be imported easily to other parts of the code thanks to Node.js modular system.
+Reusable components are organized into ***modules*** depending on their functionality. These files can be imported easily to other parts of the code thanks to modular system in Node.js.
 
+***Node Package Manager (npm)*** provide a wide ecosystem of open-source libraries and modules that can be installed and integrated into Node.js making development of web applications faster and easier.
+
+Node.js heavily emphasize on the use of common.js modules that allows developers to structure their code into separate files and efficiently manage the dependencies. The `require` function is used to import modules while `module.exports` used to export data from the module.
+
+The non-blocking architecture in Node.js allows it to handle a large volume of concurrent operations. This makes Node.js highly ***scalable*** and ideal for building real time applications and services.
+
+Node.js has a wide applications ranging from web servers, APIs, Microservices to building real-time applications.
+
+In conlusion, the mern stack's popularity is a total contribution of all for technologies. Developers are able to create efficient and fast web applications on both the client-side and server-side all in JavaScript. The mern stack's popularity is a projection of the desirability of the stack in building web applications that respond to users needs, effortlessly, fast and in real time. Ranging from UI to API, the mern stack has made it significantly possible to create scalable web applications with diverse use ranging from e-commerce, microservices to command line tools. My hope is all the communities that support MongoDB, Express.js, React and Node.js will continue to grow in support of mern stack.
+
+
+<script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+<hyvor-talk-comments website-id="9406" page-id=""></hyvor-talk-comments>
