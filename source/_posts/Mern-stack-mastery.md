@@ -1,12 +1,12 @@
 ---
-title: Mern stack mastery
+title: MERN stack mastery
 date: 2023-08-19 12:56:41
 tags:
 ---
 
 ## Introduction
 
-Mern is an acronym for a set of four popular technologies used to build web applications, namely MongoDB, Express.js, React and Node.js. The stack is widely adopted to create efficient and high perfomance web applications in commercial enterprises both for small and large fortune 100 companies in the world. MongoDB is NoSQL database while React is a popular JavaScript library used in creating UI components. Node.JS is a server-side JavaScript that serves the backend code while Express.js is its framework. We will discuss these technologies in detail ranging from their actual use in building, features, to their pros and cons. [Linked here](https://allan.onrender.com/) is the project we will use as an example with exerpts of code from [GitHub](https://github.com/allanmathenge/mern_stack)
+MERN is an acronym for a set of four popular technologies used to build web applications, namely MongoDB, Express.js, React and Node.js. The stack is widely adopted to create efficient and high perfomance web applications in commercial enterprises both for small and large fortune 100 companies in the world. MongoDB is NoSQL database while React is a popular JavaScript library used in creating UI components. Node.JS is a server-side JavaScript that serves the backend code while Express.js is its framework. We will discuss these technologies in detail ranging from their actual use in building, features, to their pros and cons. [Linked here](https://allan.onrender.com/) is the project we will use as an example with exerpts of code from [GitHub](https://github.com/allanmathenge/mern_stack)
 
 ### ***MongoDB***
 Unlike the common relational database, MongoDB uses document oriented database schema where data is stored in JSON like format known as BSON - Binary JavaScript Object Notation. Related documents are organized in collections and can have different structure and fields allowing you to store diverse data in a very dynamic and flexible ways. Below is an example of such a schema.
@@ -169,7 +169,7 @@ With its popular non-blocking architecture feature, Node.js supports a large vol
 
 From its versatile features, Node.js has a wide use of applications ranging from use in web servers, APIs, Microservices to building real-time applications.
 
-In conlusion, the mern stack's popularity is a total contribution of all four technologies. Developers are able to create efficient and fast web applications, both on the client-side and server-side all in JavaScript. The mern stack's popularity is a projection of the desirability of the stack in building web applications that respond to users needs, effortlessly, fast and in real time. Ranging from UI to API, the mern stack has made it significantly possible to create scalable web applications with diverse use ranging from e-commerce, microservices to command line tools. My hope is all the communities that support MongoDB, Express.js, React and Node.js will continue to grow in support of mern stack.
+In conlusion, the MERN stack's popularity is a total contribution of all four technologies. Developers are able to create efficient and fast web applications, both on the client-side and server-side all in JavaScript. The MERN stack's popularity is a projection of the desirability of the stack in building web applications that respond to users needs, effortlessly, fast and in real time. Ranging from UI to API, the MERN stack has made it significantly possible to create scalable web applications with diverse use ranging from e-commerce, microservices to command line tools. My hope is all the communities that support MongoDB, Express.js, React and Node.js will continue to grow in support of MERN stack.
 
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
