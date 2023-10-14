@@ -1,10 +1,13 @@
 ---
-title: My First Blog
-date: 2023-08-13 18:29:30
+title: Python
+date: 2023-010-13 18:29:30
 tags:
 ---
 
-Welcome to my First blog page
+
+## **Python**
+
+Python is a widely-used programming language, that was created by Guido van Rossum and first released in 1991. Python's design and philosophy emphasize code readability with some similarities to English language with Mathematics influence and an easy-to-learn syntax. Python syntax for example uses new lines to complete a command, as opposed to other programming language which often use semicolons or parenthesis. Python is an interpreted language to mean code is executed as it is written. It is widely adopted due to its simplicity and flexibility. There are no type declarations of variables, functions or methods which make the code short and flexible. Python hence an excellent choice for both beginners and experienced developers. Among other uses, Python is widely used for server-side web development to connect to database systems, software development, handling big data, perfom complex mathematics and system scripting. Python also works on different platforms like Windows, Linux, Mac etc. The most recent version of Python is Python 3, which we will be using in this article.
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
 <hyvor-talk-comments website-id="9342" page-id=""></hyvor-talk-comments>
