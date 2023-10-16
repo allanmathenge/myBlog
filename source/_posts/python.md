@@ -106,11 +106,12 @@ p > 0 evaluates true so the output is "p is positive".
 
 Note that the 'condition' in the if statement can be comparison operators, logical or function calls that return a Boolean value.
 
-## Conditional Statements
+## Loops
 
-There are two types of loops in Python: `for` and `while` loops which allow you to execute a repeatedly a block of code.
+There are two types of loops in Python: `for` and `while` loops which allow you to execute repeatedly a block of code.
 
-1. *For loops*: Is used to iterate over a sequence of items and execute a block of code for each item. For example:
+1. ### *For loops*: 
+Are used to iterate over a sequence of items and execute a block of code for each item. For example:
 
     numbers = [1, 2, 3, 4, 5]
     for x in numbers:
@@ -118,8 +119,47 @@ There are two types of loops in Python: `for` and `while` loops which allow you 
 
 In this example, the for loop will iterate over the list and print each number in the list.
 
-2. *While loops*: is used to execute a block of code repeatedly given a certain condition is true.
+2. ### *While loops*: 
+Are used to execute a block of code repeatedly given a certain condition is true. For example:
 
+    x = 0
+    while x < 5:
+    print(x)
+    x += 1 //Output: 0 1 2 3 4
+
+The loop will execute as long as the '*x < 5*' is true. It will print 0 1 2 3 4 until it x becomes 5, and the condition evaluates to false. Ensure that the loop finally evaluates to false, otherwise, the loop will run indefinitely causing an infinite loop.
+The `break` and `continue` statements are used to control the flow of the loop. `break` is used to exit the loop while `continue` is used to skip the iteration and move to the next iteration.
+
+## Functions
+
+Refer to a block of code that can be reused throughout a program. They are usually useful for breaking down complex programs into smaller more manageable blocks. The following is a basic syntax of a function:
+
+    def fun_name(parameters):
+        # Block of code to be executed
+
+The fun_name is the name of the function. `parameters` are input values that are passed to the function. The code inside the function is executed when the function is called.
+
+    def greetings(name):
+    print("👋Hello" + name + ".")
+    greetings("Allan") // Output: 👋Hello Allan.
+
+The function `greetings` takes one parameter 'name'. When the function is called it prints the string "👋Hello" followed by the 'name' parameter.
+The '*return*' statement in a function is used to return a value. It allows you to return a value to the calling code.
+
+    def sum(x, y):
+    return x + y
+    product = sum(4, 5)
+    print(result)
+
+The 'sum' function takes in two parameters *'x and y'* and return the result of adding them together. The function is called with the values 4 and 5 and the returned value is stored in the '*product*' variable.
+
+Another important concept is; functions can have default parameters. These default parameters are used when the caller does not provide its value. For example:
+
+    def greetings(name, greet = "Hello")
+    print(greet + name +".")
+    greetings("Allan")
+
+The 'greetings' function has one mandatory parameter 'name' and one optional parameter 'greet' with "Hello" value. When the function is called without providing a value for the 'greet' parameter, the value "Hello" is used as default.
 
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
