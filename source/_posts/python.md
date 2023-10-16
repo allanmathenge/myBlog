@@ -37,11 +37,9 @@ In Python, data types refer to the value a variable holds. There are several bui
 6. *Boolean*: Boolean data type is either True or False.
 7. *None*: This is a special constant used to represnt the absence of a value or a null value.
 
-    `
     value = "z"
     print(type(z) == str)
-    Output: True
-    `
+    // Output: True
 
 In this example, x is a String(str) 
 
@@ -63,14 +61,14 @@ For example:
 *Using the + operator to add x and y*
 
     result = x + y
-    print(result) // Output: 15
+    print(result) // Output: 11
 
 *Using the < to check if x is less than y*
 
     result = x < y
     print(result) // Output: True
 
-*Using the *= operator to multiply y by 4*
+*Using the '*=' operator to multiply y by x*
 
     result y *= x
     print(y) // Output: 24
@@ -79,7 +77,7 @@ For example:
 
 Conditional statements are used to execute code depending on different conditions. *if-else* is the most common type of conditional statement. It works in the following syntax:
 
-    if condtion:
+    if condition:
     # code is executed if the condition is true
     else:
     # code is executed if the condition is false
@@ -94,7 +92,7 @@ The condition in the if statement is Boolean (evaluates True or False). If true,
 
 p > 0 evaluates true so the output is "p is positive".
 
-*-elif-* statement which is the short for `else if` allows you to check multiple condtions.
+*-elif-* statement which is the short for `else if` allows you to check multiple conditions.
 
     p = 4
     if p > 4:
@@ -115,7 +113,7 @@ Are used to iterate over a sequence of items and execute a block of code for eac
 
     numbers = [1, 2, 3, 4, 5]
     for x in numbers:
-    print(x)
+    print(x) // output: 1, 2, 3, 4, 5
 
 In this example, the for loop will iterate over the list and print each number in the list.
 
@@ -143,17 +141,17 @@ The fun_name is the name of the function. `parameters` are input values that are
     print("👋Hello" + name + ".")
     greetings("Allan") // Output: 👋Hello Allan.
 
-The function `greetings` takes one parameter 'name'. When the function is called it prints the string "👋Hello" followed by the 'name' parameter.
-The '*return*' statement in a function is used to return a value. It allows you to return a value to the calling code.
+The function `greetings` takes one parameter 'name'. When the function is called it prints the string "👋Hello" followed by the 'name' parameter "Allan".
+The '*return*' statement in a function is used to return a value. It allows you to return a value to the calling function.
 
     def sum(x, y):
     return x + y
     product = sum(4, 5)
-    print(result)
+    print(product)
 
 The 'sum' function takes in two parameters *'x and y'* and return the result of adding them together. The function is called with the values 4 and 5 and the returned value is stored in the '*product*' variable.
 
-Another important concept is; functions can have default parameters. These default parameters are used when the caller does not provide its value. For example:
+Another important concept is; functions can have default parameters. These default parameters are used when the caller does not provide it a value. For example:
 
     def greetings(name, greet = "Hello")
     print(greet + name +".")
@@ -163,4 +161,4 @@ The 'greetings' function has one mandatory parameter 'name' and one optional par
 
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-<hyvor-talk-comments website-id="9342" page-id=""></hyvor-talk-comments>
+<hyvor-talk-comments website-id="9339" page-id=""></hyvor-talk-comments>
