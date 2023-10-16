@@ -28,7 +28,6 @@ You can change the value of a variable by reassigning it to a new value. For exa
 # Data Types
 
 In Python, data types refer to the value a variable holds. There are several built-in data-types in Python which include integers, floating-point numbers, strings etc. Let us discuss these data types:
-
 1. *Numbers*: They include integers (e.g 1, 2, 3) and floating-point numbers (e.g 1.234, 6.123)
 2. *Strings*: Enclosed in a single or double quotes, a string is sequence of characters. an example f = "Hello world!" is a string.
 3. *Lists*: Written with square brackets amd separated by commas, a list is a collection of ordered changeable items. Example b = [2, 3, 4]
