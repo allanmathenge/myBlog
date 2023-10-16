@@ -12,7 +12,7 @@ Python is a popular, high-level programming language.It was created by Guido van
 
 Unlike other programming languages like C or JavaScript, Python does not use curly braces or other symbols to define code blocks. It uses identation. This makes Python code easy to read and understand. Another key concept in Python is the use of variables. Variables are used to store data used as reference to that data. There is no need to use declarative keywords like "var" or "int" in declaring variables. Python uses *#* to comment lines of code. Python has variety of data types, including strings, numbers(integers and floats), lists and dictionaries. Specific methods are used to manipulate and work with the different data types. Python has also a number of built-in functions. For example the "print()" is used to output data to the terminal while "math" module provide a variety of mathematical functions. Python also widely supports object-oriented programming and methods for handling errors and exceptions using "try-except". Let us dive into detailed discussion of these concepts.
 
-# Variables
+## Variables
 
 A variable is used to store values. Variables are created by assigning a value to it using "=" operator. The value of the variable can be any data type and can be used throughout the programm. For example:
 
@@ -25,9 +25,10 @@ You can change the value of a variable by reassigning it to a new value. For exa
     value = "z"
     _count = 10
 
-# Data Types
+## Data Types
 
 In Python, data types refer to the value a variable holds. There are several built-in data-types in Python which include integers, floating-point numbers, strings etc. Let us discuss these data types:
+
 1. *Numbers*: They include integers (e.g 1, 2, 3) and floating-point numbers (e.g 1.234, 6.123)
 2. *Strings*: Enclosed in a single or double quotes, a string is sequence of characters. an example f = "Hello world!" is a string.
 3. *Lists*: Written with square brackets amd separated by commas, a list is a collection of ordered changeable items. Example b = [2, 3, 4]
@@ -36,13 +37,15 @@ In Python, data types refer to the value a variable holds. There are several bui
 6. *Boolean*: Boolean data type is either True or False.
 7. *None*: This is a special constant used to represnt the absence of a value or a null value.
 
+    `
     value = "z"
     print(type(z) == str)
     Output: True
+    `
 
 In this example, x is a String(str) 
 
-# Operators
+## Operators
 
 For performing mathematical operations, Python supports multiple operators such as addition(+), subtraction(-), multiplication(*), division(/) and remainder(%). Here are some common operators in Python:
 
@@ -72,7 +75,50 @@ For example:
     result y *= x
     print(y) // Output: 24
 
-# Conditional Statements
+## Conditional Statements
+
+Conditional statements are used to execute code depending on different conditions. *if-else* is the most common type of conditional statement. It works in the following syntax:
+
+    if condtion:
+    # code is executed if the condition is true
+    else:
+    # code is executed if the condition is false
+
+The condition in the if statement is Boolean (evaluates True or False). If true, the code in the if block is executed, if not, the code in the else block is executed.
+
+    p = 4
+    if p > 0:
+    print("p is positive")
+    else:
+    print("p is negative")
+
+p > 0 evaluates true so the output is "p is positive".
+
+*-elif-* statement which is the short for `else if` allows you to check multiple condtions.
+
+    p = 4
+    if p > 4:
+    print("p is positive")
+    elif p == 0:
+    print("p is zero")
+    else:
+    print("p is negative")
+
+Note that the 'condition' in the if statement can be comparison operators, logical or function calls that return a Boolean value.
+
+## Conditional Statements
+
+There are two types of loops in Python: `for` and `while` loops which allow you to execute a repeatedly a block of code.
+
+1. *For loops*: Is used to iterate over a sequence of items and execute a block of code for each item. For example:
+
+    numbers = [1, 2, 3, 4, 5]
+    for x in numbers:
+    print(x)
+
+In this example, the for loop will iterate over the list and print each number in the list.
+
+2. *While loops*: is used to execute a block of code repeatedly given a certain condition is true.
 
 
 
