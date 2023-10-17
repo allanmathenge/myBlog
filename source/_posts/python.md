@@ -159,6 +159,27 @@ Another important concept is; functions can have default parameters. These defau
 
 The 'greetings' function has one mandatory parameter 'name' and one optional parameter 'greet' with "Hello" value. When the function is called without providing a value for the 'greet' parameter, the value "Hello" is used as default.
 
+# Classes and Objects
+
+In Python, classes are templates for creating objects. It defines the data and methods that object of that class will have. The objects created from the same class have common characteristics and behaviours. **Object-oriented programming (OOP)** is a programming paradigm based on the idea that, software systems can be designed and constructed by modeling real-world entities and their interactions as objects. OOP provides a way to structure and organize code that is reusable, maintainable and scalable.
+
+The `class` keyword is used to define a class, followed by the class name and a colon. The body is idented and contains the data and methods. For example:
+
+    class Vehicle:
+        def __init__(self, make, model)
+        self.make = make
+        self.model = model
+        def moves(self)
+            print(f"The {self.make} moves along.")
+    my_car = Vehicle("Cadillac", "model 3")
+    my_car.moves() // Output: The Cadillac Model 3 moves along.
+
+In this example, the 'Vehicle' class has two data attributes 'make' and 'model 3' and one method (behaviour) that prints the make of the Vehicle. To create an object, use the class name followed by parentheses - it's known as instantiation. The data object is initialized with make as "Cadillac" and model as "model 3".
+
+### Inheritance
+Classes can also inherit from other classes. Inheritance allows you to create a class that inherits the data and behaviour of an existing class. You can also add new data and new behaviour of its own. The class that inherits from another class is called the **child** and the class that is inherited from is the **parent** class.
+
+
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
 <hyvor-talk-comments website-id="9814" page-id=""></hyvor-talk-comments>
