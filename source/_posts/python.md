@@ -6,7 +6,7 @@ tags:
 
 #       Abstract
 
-Python is a popular, high-level programming language.It was created by Guido van Rossum and first released in 1991. Python's design and philosophy emphasize code readability. It has some similarities to English language with Mathematics influence and an easy-to-learn syntax. Python syntax for example uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parenthesis. Python is an interpreted language to mean code is executed as it is written. It is widely adopted due to its simplicity and flexibility. There are no type declarations of variables, functions or methods which make the code short and flexible. It is an excellent choice for both beginners and experienced developers. Among other uses, Python is widely used for server-side web development to connect to database systems, software development, handling big data, perfom complex mathematics and system scripting. Python also works on different platforms like Windows, Linux, Mac etc. The most recent version of Python is Python 3. In this article we will use Python 3 version to explore the key concepts in Python Programming Language.
+Python is a popular, high-level programming language. It was created by Guido van Rossum and first released in 1991. Python's design and philosophy emphasize code readability. It has some similarities to English language with Mathematics influence and an easy-to-learn syntax. Python syntax for example uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parenthesis. Python is an interpreted language to mean code is executed as it is written. It is widely adopted due to its simplicity and flexibility. There are no type declarations of variables, functions or methods which make the code short and flexible. It is an excellent choice for both beginners and experienced developers. Among other uses, Python is widely used for server-side web development to connect to database systems, software development, handling big data, perfom complex mathematics and system scripting. Python also works on different platforms like Windows, Linux, Mac etc. The most recent version of Python is Python 3. In this article we will use Python 3 version to explore the key concepts in Python Programming Language.
 
 # **Fundamentals and Overview**
 
@@ -223,7 +223,7 @@ Exception handling in Python enables you to effectively handle errors and except
 4. **raise**: is useful when you want to raise an exceptional situation. An example:
 
     if an_exceptional_situation_happen:
-        raise someException("An error occurred!")
+    raise someException("An error occurred!")
 
 Because unexpected errors are effectively handled error handling in Python make the program efficient and user friendly. 
 
@@ -261,7 +261,7 @@ Higher-order function is a function that takes in one or more functions as argum
 
 
 
-# *contact author: allanmathenge2@gmail.com*
+### *contact author: allanmathenge2@gmail.com*
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
 <hyvor-talk-comments website-id="9814" page-id=""></hyvor-talk-comments>
