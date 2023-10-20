@@ -10,7 +10,7 @@ Python is a popular, high-level programming language.It was created by Guido van
 
 # **Fundamentals and Overview**
 
-Unlike other programming languages like C or JavaScript, Python does not use curly braces or other symbols to define code blocks. It uses identation. This makes Python code easy to read and understand. Another key concept in Python is the use of variables. Variables are used to store data used as reference to that data. There is no need to use declarative keywords like "var" or "int" in declaring variables. Python uses *#* to comment lines of code. Python has variety of data types, including strings, numbers(integers and floats), lists and dictionaries. Specific methods are used to manipulate and work with the different data types. Python has also a number of built-in functions. For example the "print()" is used to output data to the terminal while "math" module provide a variety of mathematical functions. Python also widely supports object-oriented programming and methods for handling errors and exceptions using "try-except". Let us dive into detailed discussion of these concepts.
+Unlike other programming languages like C or JavaScript, Python does not use curly braces or other symbols to define code blocks. It uses identation. This makes Python code easy to read and understand. Another key concept in Python is the use of variables. Variables are used to store data used as reference to that data. There is no need to use declarative keywords like "var" or "int" in declaring variables. Python uses **'#'** to comment lines of code. There are a variety of data types in Python including strings, numbers(integers and floats), lists and dictionaries. Specific methods are used to manipulate and work with the different data types. Python has also a number of built-in functions. For example the "print()" is used to output data to the terminal while "math" module provides a variety of mathematical functions. Also, Python widely supports object-oriented programming and methods for handling errors and exceptions using "try-except". Let us dive into detailed discussion of these concepts.
 
 ## Variables
 
@@ -179,7 +179,89 @@ In this example, the 'Vehicle' class has two data attributes 'make' and 'model 3
 ### Inheritance
 Classes can also inherit from other classes. Inheritance allows you to create a class that inherits the data and behaviour of an existing class. You can also add new data and new behaviour of its own. The class that inherits from another class is called the **child** and the class that is inherited from is the **parent** class.
 
+    class Airplane(Vehicle):
+    def __init__(self, make, model, plane_id):
+        super().__init__(make, model)
+        self.plane_id = plane_id
 
+    def moves(self):
+        print(f"The {self.make} {self.model} {self.plane_id} flew along.")
+
+    boeing = Airplane('Boeing', 'Skyhawk', 'KQ707')
+
+The `super()` function is used as a subsititute for inherited attributes (make and model) to reduce repetition.
+
+### Exception handling
+Exception handling in Python enables you to effectively handle errors and exception situations that occur during runnin of a program. Catching and handling exceptions prevents your program from crashing. The following class component was used to define errors.
+
+    class Handle_exceptions_raised(Exception)
+        pass
+
+    x = 2
+    try:
+        print(x / 0)
+        raise  Handle_exceptions_raised("I am a custom exception!")
+    except ZeroDivisionError:
+        print("Please do not devide by zero")
+    except NameError:
+        print("NameError - Means something is undefined")
+    except Exception as error:
+        print(f"An error occurred: {error}")
+    else:
+        print("No Errors")
+    finally:
+        # Cleanup code (always excecuted)
+        print("Execution complete, print with or without an error")
+
+
+1. **try**: We enclose a block of code that may raise an exception. If an exception occurs, the program runs the matching `except` block. In the above example, the product of `print(x / 0)` was `undefined`. `NameError` was therefore raised as the matching exception.
+
+2. **except**: Specify the type of exception you want to catch in the `except` block. If an exception of the specified type occurs in the `try` block, the matching code inside the `except` block is executed. In the above example, multiple exceptions were provided, but only `NameError` was evaluated as the matching `except` result of `print(x / 0)`.
+
+3. **finally**: Is used to specify a block of code that should always be excecuted, whether an exception occured or not. It is used for excecuting cleanup functions e.g closing files.
+
+4. **raise**: is useful when you want to raise an exceptional situation. An example:
+
+    if an_exceptional_situation_happen:
+        raise someException("An error occurred!")
+
+Because unexpected errors are effectively handled error handling in Python make the program efficient and user friendly. 
+
+## Higher Order Functions (HOF)
+
+Higher-order function is a function that takes in one or more functions as arguments return another function as its result. They are an essential part of Python programming. The `map()`, `filter()` and `reduce()` are the basic building blocks of higher-order functions. `map()` and `filter()` are built-in functions, whereas `reduce()` is contained in `functools()` module.
+
+*(i)* The `map()` function applies a given function to each item in an iterable. In the example below, the square of the iterator results are returned.
+
+    numbers = [3, 7, 12, 18, 20, 21]
+
+    squared_nums = map(lambda num: num * num, numbers)
+
+    print(list(squared_nums)) // Output: [9, 49, 144, 324, 400, 441]
+
+`lambda()` is an anonymous function. It was used to return a map object in iteration.
+
+*(ii)* The `filter()` function filters elements from an iterable based on a its Boolean return value.
+
+    numbers = [3, 7, 12, 18, 20, 21]
+
+    odd_nums = filter(lambda num: num % 2 != 0, numbers)
+
+    print(list(odd_nums)) //Output: [3, 7, 21]
+
+*(iii)* The `reduce()` function from the `functools` module repeatedly applies a function to the elements of an iterable, accummulating result.
+
+    from functools import reduce
+
+    numbers = [1, 2, 3, 4, 5, 1]
+
+    total = reduce(lambda acc, curr: acc + curr, numbers, 10)
+
+    print(total) //Output: 26 note: the addition start at 10
+
+
+
+# *contact author: allanmathenge2@gmail.com*
 
 <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
 <hyvor-talk-comments website-id="9814" page-id=""></hyvor-talk-comments>
